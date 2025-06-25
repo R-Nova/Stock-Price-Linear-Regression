@@ -49,7 +49,7 @@ try:
     # ---------- CHART ----------
     st.write("---")
     st.subheader("📉 Actual vs Predicted Prices")
-    plt.style.use("seaborn-darkgrid")
+    plt.style.use("ggplot")
     fig, ax = plt.subplots(figsize=(12, 6))
     ax.plot(df['Close'].values, label='Actual', color='skyblue', linewidth=2)
     ax.plot(predictions, label='Predicted', color='orange', linestyle='--', linewidth=2)
