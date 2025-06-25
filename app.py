@@ -23,6 +23,7 @@ try:
     df = yf.download(ticker, period=f"{days}d")
     df = df[['Close']]
     df.dropna(inplace=True)
+
     st.subheader(f"Showing Data for: {ticker}")
     st.write(df.tail())
 
@@ -38,8 +39,8 @@ try:
     predictions = model.predict(X)
 
     # ---------- METRICS ----------
-    latest_price = df['Close'].iloc[-1]
-    predicted_price = predictions[-1]
+    latest_price = float(df['Close'].iloc[-1])
+    predicted_price = float(predictions[-1])
 
     col1, col2 = st.columns(2)
     col1.metric("📌 Latest Close", f"${latest_price:.2f}")
@@ -51,14 +52,14 @@ try:
     plt.style.use("seaborn-darkgrid")
     fig, ax = plt.subplots(figsize=(12, 6))
     ax.plot(df['Close'].values, label='Actual', color='skyblue', linewidth=2)
-    ax.plot(predictions, label='Predicted', color='orange', linestyle='--')
+    ax.plot(predictions, label='Predicted', color='orange', linestyle='--', linewidth=2)
     ax.set_title("Stock Price Prediction")
     ax.set_xlabel("Days")
     ax.set_ylabel("Price")
     ax.legend()
     st.pyplot(fig)
 
-    # ---------- DOWNLOAD BUTTON ----------
+    # ---------- DOWNLOAD CSV ----------
     st.write("---")
     result_df = df.copy()
     result_df['Predicted_Close'] = predictions
