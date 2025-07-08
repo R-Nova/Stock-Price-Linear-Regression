@@ -7,7 +7,7 @@ import yfinance as yf
 from io import BytesIO
 
 # ---------- PAGE SETUP ----------
-st.set_page_config(page_title="MUHAF", page_icon="📈", layout="wide")
+st.set_page_config(page_title="MUHAF Stock & Crypto Prediction Dashboard", page_icon="📈", layout="wide")
 
 # ---------- SIDEBAR ----------
 st.sidebar.title("Choose Data Source")
@@ -21,8 +21,8 @@ ticker = st.sidebar.text_input("💻 Enter Stock Ticker (e.g. AAPL, GOOG)")
 days = st.sidebar.slider("Number of Past Days", 60, 365, 180)
 
 # ---------- TITLE ----------
-st.markdown("<h1 style='text-align: center;'>📈 Stock Price Prediction Dashboard</h1>", unsafe_allow_html=True)
-st.write("---")
+st.markdown("<h1 style='text-align: center;'>📈 MUHAF Stock & Crypto Prediction Dashboard </h1>", unsafe_allow_html=True)
+st.write("Welcome to the MUHAF Dashboard!")
 
 # ---------- DATA LOAD LOGIC ----------
 df = None
