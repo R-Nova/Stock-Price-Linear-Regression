@@ -7,7 +7,7 @@ import yfinance as yf
 from io import BytesIO
 
 # ---------- PAGE SETUP ----------
-st.set_page_config(page_title="Stock Predictor", page_icon="📈", layout="wide")
+st.set_page_config(page_title="MUHAF", page_icon="📈", layout="wide")
 
 # ---------- SIDEBAR ----------
 st.sidebar.title("Choose Data Source")
